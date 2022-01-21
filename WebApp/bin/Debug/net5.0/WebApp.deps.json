@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "WebApp/1.0.0": {
         "dependencies": {
+          "Plugin.DataStore.InMemory": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -322,6 +323,36 @@
         },
         "compile": {
           "WebApp.dll": {}
+        }
+      },
+      "CoreBusiness/1.0.0": {
+        "runtime": {
+          "CoreBusiness.dll": {}
+        },
+        "compile": {
+          "CoreBusiness.dll": {}
+        }
+      },
+      "Plugin.DataStore.InMemory/1.0.0": {
+        "dependencies": {
+          "UseCases": "1.0.0"
+        },
+        "runtime": {
+          "Plugin.DataStore.InMemory.dll": {}
+        },
+        "compile": {
+          "Plugin.DataStore.InMemory.dll": {}
+        }
+      },
+      "UseCases/1.0.0": {
+        "dependencies": {
+          "CoreBusiness": "1.0.0"
+        },
+        "runtime": {
+          "UseCases.dll": {}
+        },
+        "compile": {
+          "UseCases.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -2026,6 +2057,21 @@
   },
   "libraries": {
     "WebApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoreBusiness/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Plugin.DataStore.InMemory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UseCases/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

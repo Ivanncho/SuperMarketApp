@@ -83,6 +83,13 @@ using WebApp.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 12 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\_Imports.razor"
+using CoreBusiness;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\FetchData.razor"
 using WebApp.Data;
 

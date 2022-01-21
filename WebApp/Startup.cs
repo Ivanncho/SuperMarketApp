@@ -5,10 +5,13 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Plugin.DataStore.InMemory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UseCases;
+using UseCases.DataStorePluginInterfaces;
 using WebApp.Data;
 
 namespace WebApp
@@ -29,6 +32,12 @@ namespace WebApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            //Dependency Injection for InMemory Data Store
+            services.AddScoped<ICategoryRepository, CategoryInMemoryRepository>();
+
+            //Dependency Injection for Use cases
+            services.AddTransient<IViewCategoryUseCase, ViewCategoryUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

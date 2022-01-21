@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Plugin.DataStore.InMemory\Plugin.DataStore.InMemory.csproj" />
+  </ItemGroup>
+
 </Project>

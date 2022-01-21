@@ -56,3 +56,11 @@ C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\ref\WebAp
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\WebApp.pdb
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\WebApp.csproj.CopyComplete
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\bin\Debug\net5.0\CoreBusiness.dll
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\bin\Debug\net5.0\Plugin.DataStore.InMemory.dll
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\bin\Debug\net5.0\UseCases.dll
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\bin\Debug\net5.0\Plugin.DataStore.InMemory.pdb
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\bin\Debug\net5.0\CoreBusiness.pdb
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\bin\Debug\net5.0\UseCases.pdb
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\CategoriesComponent.razor.g.cs
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Pages\CategoriesComponent.razor.g.cs

@@ -37,7 +37,7 @@ namespace Plugin.DataStore.InMemory
         }
         public IEnumerable<Category> GetCategories()
         {
-            throw new NotImplementedException();
+            return _categories;
         }
     }
 }

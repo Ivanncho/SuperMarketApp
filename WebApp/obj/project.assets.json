@@ -1,11 +1,66 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "CoreBusiness/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/CoreBusiness.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoreBusiness.dll": {}
+        }
+      },
+      "Plugin.DataStore.InMemory/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "UseCases": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Plugin.DataStore.InMemory.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Plugin.DataStore.InMemory.dll": {}
+        }
+      },
+      "UseCases/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CoreBusiness": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UseCases.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UseCases.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CoreBusiness/1.0.0": {
+      "type": "project",
+      "path": "../CoreBusiness/CoreBusiness.csproj",
+      "msbuildProject": "../CoreBusiness/CoreBusiness.csproj"
+    },
+    "Plugin.DataStore.InMemory/1.0.0": {
+      "type": "project",
+      "path": "../Plugin.DataStore.InMemory/Plugin.DataStore.InMemory.csproj",
+      "msbuildProject": "../Plugin.DataStore.InMemory/Plugin.DataStore.InMemory.csproj"
+    },
+    "UseCases/1.0.0": {
+      "type": "project",
+      "path": "../UseCases/UseCases.csproj",
+      "msbuildProject": "../UseCases/UseCases.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Plugin.DataStore.InMemory >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\jasmi\\.nuget\\packages\\": {}
@@ -33,7 +88,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\jasmi\\source\\repos\\SupermarketManager\\Plugin.DataStore.InMemory\\Plugin.DataStore.InMemory.csproj": {
+              "projectPath": "C:\\Users\\jasmi\\source\\repos\\SupermarketManager\\Plugin.DataStore.InMemory\\Plugin.DataStore.InMemory.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

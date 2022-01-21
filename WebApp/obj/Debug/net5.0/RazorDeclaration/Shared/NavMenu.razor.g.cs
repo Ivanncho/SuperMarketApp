@@ -82,6 +82,13 @@ using WebApp.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\_Imports.razor"
+using CoreBusiness;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -90,7 +97,7 @@ using WebApp.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Shared\NavMenu.razor"
+#line 33 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
