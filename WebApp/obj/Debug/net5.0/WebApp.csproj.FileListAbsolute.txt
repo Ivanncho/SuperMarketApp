@@ -64,3 +64,5 @@ C:\Users\jasmi\source\repos\SupermarketManager\WebApp\bin\Debug\net5.0\CoreBusin
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\bin\Debug\net5.0\UseCases.pdb
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\CategoriesComponent.razor.g.cs
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Pages\CategoriesComponent.razor.g.cs
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\AddCategoryComponent.razor.g.cs
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Pages\AddCategoryComponent.razor.g.cs

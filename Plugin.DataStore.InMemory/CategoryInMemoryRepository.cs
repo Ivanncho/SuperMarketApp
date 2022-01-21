@@ -35,6 +35,18 @@ namespace Plugin.DataStore.InMemory
                 }
             };
         }
+
+        public void AddCategory(Category category)
+        {
+           if( _categories.Any(x => x.Name.Equals(category.Name, StringComparison.OrdinalIgnoreCase)))
+            {
+                return;
+            }
+            var maxId = _categories.Max(x => x.CategoryId);
+            category.CategoryId = maxId + 1;
+            _categories.Add(category);
+        }
+
         public IEnumerable<Category> GetCategories()
         {
             return _categories;
