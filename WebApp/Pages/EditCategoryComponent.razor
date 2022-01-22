@@ -19,8 +19,8 @@
             <InputText id="name" @bind-Value="category.Name" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="name">Description</label>
-            <InputText id="name" @bind-Value="category.Description" class="form-control" />
+            <label for="description">Description</label>
+            <InputText id="description" @bind-Value="category.Description" class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
         <button type="button" class="btn btn-primary" @onclick="OnCancel">Cancel</button>
@@ -44,8 +44,13 @@
         base.OnParametersSet();
         if (int.TryParse(this.CategoryId, out int iCategoryId))
         {
-            this.category = GetCategoryByIdUseCase.Execute(iCategoryId);
-
+            var cat = GetCategoryByIdUseCase.Execute(iCategoryId);
+            this.category = new Category() 
+            { 
+                CategoryId = cat.CategoryId, 
+                Name = cat.Name, 
+                Description = cat.Description 
+            };
         }
 
     }

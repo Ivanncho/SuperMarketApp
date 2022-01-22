@@ -62,7 +62,8 @@ namespace Plugin.DataStore.InMemory
             var categoryToUpdate = GetCategoryById(category.CategoryId);
             if(categoryToUpdate != null)
             {
-                categoryToUpdate = category;
+                categoryToUpdate.Name = category.Name;
+                categoryToUpdate.Description = category.Description;
             }
         }
     }

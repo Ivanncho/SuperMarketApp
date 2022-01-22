@@ -115,8 +115,13 @@ using CoreBusiness;
         base.OnParametersSet();
         if (int.TryParse(this.CategoryId, out int iCategoryId))
         {
-            this.category = GetCategoryByIdUseCase.Execute(iCategoryId);
-
+            var cat = GetCategoryByIdUseCase.Execute(iCategoryId);
+            this.category = new Category() 
+            { 
+                CategoryId = cat.CategoryId, 
+                Name = cat.Name, 
+                Description = cat.Description 
+            };
         }
 
     }
