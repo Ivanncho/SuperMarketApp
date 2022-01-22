@@ -39,6 +39,7 @@ namespace WebApp
             //Dependency Injection for Use cases
             services.AddTransient<IViewCategoryUseCase, ViewCategoryUseCase>();
             services.AddTransient<IAddCategoryUseCase, AddCategoryUseCase>();
+            services.AddTransient<IEditCategoryUseCase, EditCategoryUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
