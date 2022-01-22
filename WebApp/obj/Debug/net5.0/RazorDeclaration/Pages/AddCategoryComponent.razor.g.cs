@@ -111,7 +111,10 @@ using CoreBusiness;
         AddCategoryUseCase.Execute(category);
         NavigationManager.NavigateTo("/categories");
     }
-
+    private void OnCancel()
+    {
+        NavigationManager.NavigateTo("/categories");
+    }
 
 #line default
 #line hidden

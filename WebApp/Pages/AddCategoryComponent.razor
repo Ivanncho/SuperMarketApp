@@ -8,7 +8,7 @@
 
 @if(category != null)
             {
-<EditForm Model="@category" class="form-inline" OnValidSubmit="OnValidSubmit">
+<EditForm Model="@category" class="form-group" OnValidSubmit="OnValidSubmit">
     <DataAnnotationsValidator></DataAnnotationsValidator>
     <ValidationSummary></ValidationSummary>
 
@@ -21,7 +21,7 @@
         <InputText id="name" @bind-Value="category.Description" class="form-control" />
     </div>
     <button type="submit" class="btn btn-primary">Add</button>
-
+    <button type="button" class="btn btn-primary" @onclick="OnCancel">Cancel</button>
 </EditForm>
             }
 
@@ -38,5 +38,8 @@
         AddCategoryUseCase.Execute(category);
         NavigationManager.NavigateTo("/categories");
     }
-
+    private void OnCancel()
+    {
+        NavigationManager.NavigateTo("/categories");
+    }
 }
