@@ -97,7 +97,7 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Shared\NavMenu.razor"
+#line 23 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
