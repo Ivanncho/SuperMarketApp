@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApp.Shared
+namespace WebApp.Pages
 {
     #line hidden
     using System;
@@ -89,7 +89,8 @@ using CoreBusiness;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/products")]
+    public partial class ProductsComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -97,20 +98,22 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Shared\NavMenu.razor"
+#line 37 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
        
-    private bool collapseNavMenu = true;
+    private IEnumerable<Product> products;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    protected override void OnInitialized()
     {
-        collapseNavMenu = !collapseNavMenu;
+        base.OnInitialized();
+
+        products = ViewProductsUseCase.Execute();
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IGetCategoryByIdUseCase GetCategoryByIdUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewProductsUseCase ViewProductsUseCase { get; set; }
     }
 }
 #pragma warning restore 1591
