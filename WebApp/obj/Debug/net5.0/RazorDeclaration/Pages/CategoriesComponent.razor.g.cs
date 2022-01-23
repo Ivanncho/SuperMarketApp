@@ -98,7 +98,7 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CategoriesComponent.razor"
+#line 43 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CategoriesComponent.razor"
        
     private List<Category> categories;
 
@@ -115,10 +115,15 @@ using CoreBusiness;
     {
         NavigationManager.NavigateTo($"/editcategory/{category.CategoryId}");
     }
+    private void DeleteCategory(int categoryId)
+    {
+        DeleteCategoryUseCase.Delete(categoryId);
+    }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IDeleteCategoryUseCase DeleteCategoryUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewCategoryUseCase ViewCategoryUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
