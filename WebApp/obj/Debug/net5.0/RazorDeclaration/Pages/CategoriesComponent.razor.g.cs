@@ -98,14 +98,14 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CategoriesComponent.razor"
+#line 45 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CategoriesComponent.razor"
        
     private List<Category> categories;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        categories = ViewCategoryUseCase.Execute()?.ToList();
+        LoadCategories();
     }
     private void OnClickAddCategory()
     {
@@ -118,6 +118,11 @@ using CoreBusiness;
     private void DeleteCategory(int categoryId)
     {
         DeleteCategoryUseCase.Delete(categoryId);
+        LoadCategories();
+    }
+    private void LoadCategories()
+    {
+        categories = ViewCategoryUseCase.Execute()?.ToList();
     }
 
 #line default
