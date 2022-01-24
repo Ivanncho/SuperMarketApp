@@ -101,9 +101,26 @@ namespace Plugin.DataStore.InMemory
             products.Add(product);
         }
 
+        public Product GetProductById(int productId)
+        {
+            return products.FirstOrDefault(x => x.ProductId == productId);
+        }
+
         public IEnumerable<Product> GetProducts()
         {
             return products;
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            var productToUpdate = GetProductById(product.ProductId);
+            if (productToUpdate != null)
+            {
+                productToUpdate.Name = product.Name;
+                productToUpdate.CategoryId = product.CategoryId;
+                productToUpdate.Quantity = product.Quantity;
+                productToUpdate.Price = product.Price;
+            }
         }
     }
 }

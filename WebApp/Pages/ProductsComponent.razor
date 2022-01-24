@@ -7,31 +7,35 @@
 <h3>Products</h3>
 <br />
 @if(products != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Category</th>
+                <th>Product Name</th>
+                <th>Product Qty</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
             {
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Product Category</th>
-                            <th>Product Name</th>
-                            <th>Product Qty</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach(var product in products)
-                            {
-                                <tr>
-                                    <td>@product.ProductId</td>
-                                    <td>@GetCategoryByIdUseCase.Execute(product.CategoryId.Value)?.Name</td>
-                                    <td>@product.Name</td>
-                                    <td>@product.Quantity</td>
-                                    <td>@(Math.Round(product.Price.Value,2))</td>
-                                </tr>
-                            }   
-                    </tbody>
-                </table>
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@GetCategoryByIdUseCase.Execute(product.CategoryId.Value)?.Name</td>
+                    <td>@product.Name</td>
+                    <td>@product.Quantity</td>
+                    <td>@(Math.Round(product.Price.Value,2))</td>
+                    <td>
+                        <button type="button" class="btn btn-info" @onclick="@(() => OnEditProduct(product))">Edit</button>
+                    </td>
+                </tr>
             }
+        </tbody>
+    </table>
+}
 <br />
 <button type="button" @onclick="OnClickAddProduct" class="btn btn-primary">Add Product</button>
 
@@ -49,5 +53,9 @@
     private void OnClickAddProduct()
     {
         NavigationManager.NavigateTo("/addproduct");
+    }
+    private void OnEditProduct(Product product)
+    {
+        NavigationManager.NavigateTo($"/editproduct/{product.ProductId}");
     }
 }
