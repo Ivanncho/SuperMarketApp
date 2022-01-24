@@ -98,7 +98,7 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
+#line 44 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
        
     private IEnumerable<Product> products;
 
@@ -111,6 +111,10 @@ using CoreBusiness;
     private void OnClickAddProduct()
     {
         NavigationManager.NavigateTo("/addproduct");
+    }
+    private void OnEditProduct(Product product)
+    {
+        NavigationManager.NavigateTo($"/editproduct/{product.ProductId}");
     }
 
 #line default

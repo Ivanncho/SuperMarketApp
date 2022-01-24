@@ -1,4 +1,14 @@
-﻿<h3>Update Product</h3>
+﻿@page "/editproduct/{productId}"
+
+@inject NavigationManager NavigationManager
+@inject UseCases.IAddProductUseCase AddProductUseCase
+@inject UseCases.IGetProductByIdUseCase GetProductByIdUseCase 
+@inject UseCases.IEditProductUseCase EditProductUseCase
+
+<h3>Edit Product</h3>
+<br />
+
+
 
 @code {
 
