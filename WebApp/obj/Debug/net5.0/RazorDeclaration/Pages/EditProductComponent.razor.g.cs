@@ -97,6 +97,52 @@ using CoreBusiness;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 50 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\EditProductComponent.razor"
+       
+    [Parameter]
+    public string ProductId { get; set; }
+
+    private Product product;
+    private IEnumerable<Category> categories;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        categories = ViewCategoryUseCase.Execute();
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if(int.TryParse(this.ProductId, out int iProductId))
+        {
+            var prod = GetProductByIdUseCase.Execute(iProductId);
+            this.product = new Product()
+            {
+                ProductId = prod.ProductId,
+                CategoryId = prod.CategoryId,
+                Name = prod.Name,
+                Quantity = prod.Quantity,
+                Price = prod.Price
+            };
+        }
+    }
+    private void OnValidSubmit()
+    {
+        EditProductUseCase.Execute(this.product);
+        NavigationManager.NavigateTo("/products");
+    }
+    private void OnCancel()
+    {
+        NavigationManager.NavigateTo("/products");
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewCategoryUseCase ViewCategoryUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IEditProductUseCase EditProductUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IGetProductByIdUseCase GetProductByIdUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IAddProductUseCase AddProductUseCase { get; set; }
