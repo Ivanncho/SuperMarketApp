@@ -3,6 +3,7 @@
 @inject NavigationManager NavigationManager
 @inject UseCases.IViewProductsUseCase ViewProductsUseCase
 @inject UseCases.IGetCategoryByIdUseCase GetCategoryByIdUseCase
+@inject UseCases.IDeleteProductUseCase DeleteProductUseCase
 
 <h3>Products</h3>
 <br />
@@ -30,6 +31,8 @@
                     <td>@(Math.Round(product.Price.Value,2))</td>
                     <td>
                         <button type="button" class="btn btn-info" @onclick="@(() => OnEditProduct(product))">Edit</button>
+                        &nbsp;
+                        <button type="button" class="btn btn-danger" @onclick="@(() => OnDeleteProduct(product.ProductId))">Delete</button>
                     </td>
                 </tr>
             }
@@ -47,8 +50,9 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-
         products = ViewProductsUseCase.Execute();
+
+
     }
     private void OnClickAddProduct()
     {
@@ -57,5 +61,9 @@
     private void OnEditProduct(Product product)
     {
         NavigationManager.NavigateTo($"/editproduct/{product.ProductId}");
+    }
+    private void OnDeleteProduct(int productId)
+    {
+        DeleteProductUseCase.Execute(productId);
     }
 }

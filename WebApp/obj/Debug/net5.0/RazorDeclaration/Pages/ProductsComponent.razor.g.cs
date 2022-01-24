@@ -98,15 +98,16 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
+#line 47 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
        
     private IEnumerable<Product> products;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-
         products = ViewProductsUseCase.Execute();
+
+
     }
     private void OnClickAddProduct()
     {
@@ -116,10 +117,15 @@ using CoreBusiness;
     {
         NavigationManager.NavigateTo($"/editproduct/{product.ProductId}");
     }
+    private void OnDeleteProduct(int productId)
+    {
+        DeleteProductUseCase.Execute(productId);
+    }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IDeleteProductUseCase DeleteProductUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IGetCategoryByIdUseCase GetCategoryByIdUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewProductsUseCase ViewProductsUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
