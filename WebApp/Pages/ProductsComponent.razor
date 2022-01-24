@@ -1,5 +1,6 @@
 ﻿@page "/products"
 
+@inject NavigationManager NavigationManager
 @inject UseCases.IViewProductsUseCase ViewProductsUseCase
 @inject UseCases.IGetCategoryByIdUseCase GetCategoryByIdUseCase
 
@@ -31,6 +32,8 @@
                     </tbody>
                 </table>
             }
+<br />
+<button type="button" @onclick="OnClickAddProduct" class="btn btn-primary">Add Product</button>
 
 
 
@@ -42,5 +45,9 @@
         base.OnInitialized();
 
         products = ViewProductsUseCase.Execute();
+    }
+    private void OnClickAddProduct()
+    {
+        NavigationManager.NavigateTo("/addproduct");
     }
 }

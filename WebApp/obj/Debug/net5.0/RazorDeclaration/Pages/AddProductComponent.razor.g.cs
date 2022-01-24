@@ -89,8 +89,8 @@ using CoreBusiness;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/products")]
-    public partial class ProductsComponent : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/addproduct")]
+    public partial class AddProductComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,26 +98,33 @@ using CoreBusiness;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
+#line 49 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\AddProductComponent.razor"
        
-    private IEnumerable<Product> products;
+    private Product product;
+    private IEnumerable<Category> categories;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-
-        products = ViewProductsUseCase.Execute();
+        product = new Product();
+        categories = ViewCategoryUseCase.Execute();
     }
-    private void OnClickAddProduct()
+    private void OnValidSubmit()
     {
-        NavigationManager.NavigateTo("/addproduct");
+        AddProductUseCase.Execute(product);
+        NavigationManager.NavigateTo("/products");
     }
+    private void OnCancel()
+    {
+        NavigationManager.NavigateTo("/products");
+    }
+
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IGetCategoryByIdUseCase GetCategoryByIdUseCase { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewProductsUseCase ViewProductsUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IViewCategoryUseCase ViewCategoryUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCases.IAddProductUseCase AddProductUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }

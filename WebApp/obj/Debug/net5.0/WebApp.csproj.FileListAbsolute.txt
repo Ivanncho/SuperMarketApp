@@ -70,3 +70,5 @@ C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\RazorDecl
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Pages\EditCategoryComponent.razor.g.cs
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\ProductsComponent.razor.g.cs
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Pages\ProductsComponent.razor.g.cs
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\AddProductComponent.razor.g.cs
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Pages\AddProductComponent.razor.g.cs
