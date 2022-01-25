@@ -2,10 +2,23 @@
 
 <h3>Cashier's Console</h3>
 <br />
-<SelectProductForSelling/>
+<div class="row">
+    <div class="col-4">
+        <SelectProductForSelling OnProductSelected="SelectProduct"></SelectProductForSelling>
+        <SellProductComponent OnProductSold="SellProduct"></SellProductComponent>
+    </div>
+    <div class="col">
+    </div>
+</div>
 
 @code{
 
-    
+    private void SelectProduct(Product product)
+    {
+            
+    }
+    private void SellProduct(Product product)
+    {
 
+    }
 }

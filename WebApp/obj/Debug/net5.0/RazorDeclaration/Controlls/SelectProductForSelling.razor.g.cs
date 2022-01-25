@@ -114,6 +114,8 @@ using WebApp.Controlls;
 #line 37 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SelectProductForSelling.razor"
       
     private IEnumerable<Product> productsInCategory;
+    [Parameter]
+    public EventCallback<Product> OnProductSelected { get; set; }
 
     private int selectedCategoryId;
     public int SelectedCategoryId
@@ -136,6 +138,10 @@ using WebApp.Controlls;
     {
         base.OnInitialized();
         categories = ViewCategoryUseCase.Execute();
+    }
+    private void OnSelectProduct(Product product)
+    {
+        OnProductSelected.InvokeAsync(product);
     }
 
 
