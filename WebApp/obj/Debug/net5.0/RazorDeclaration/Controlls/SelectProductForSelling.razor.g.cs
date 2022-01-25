@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApp
+namespace WebApp.Controlls
 {
     #line hidden
     using System;
@@ -103,13 +103,47 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
-    public partial class _Imports : System.Object
+    public partial class SelectProductForSelling : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
-        protected void Execute()
+        protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 37 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SelectProductForSelling.razor"
+      
+    private IEnumerable<Product> productsInCategory;
+
+    private int selectedCategoryId;
+    public int SelectedCategoryId
+    {
+        get
+        {
+            return selectedCategoryId;
+        }
+        set
+        {
+            selectedCategoryId = value;
+            productsInCategory = ViewProductsByCategoryIdUseCase.Execute(value);
+            StateHasChanged();
+        }
+    }
+
+    private IEnumerable<Category> categories;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        categories = ViewCategoryUseCase.Execute();
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IViewProductsByCategoryIdUseCase ViewProductsByCategoryIdUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IViewCategoryUseCase ViewCategoryUseCase { get; set; }
     }
 }
 #pragma warning restore 1591

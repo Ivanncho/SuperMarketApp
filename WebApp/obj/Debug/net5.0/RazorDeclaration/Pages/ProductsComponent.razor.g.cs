@@ -89,6 +89,20 @@ using CoreBusiness;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\_Imports.razor"
+using UseCases;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\_Imports.razor"
+using WebApp.Controlls;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/products")]
     public partial class ProductsComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
