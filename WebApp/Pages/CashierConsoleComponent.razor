@@ -2,11 +2,19 @@
 
 <h3>Cashier's Console</h3>
 <br />
+<div class="form-group">
+    <label for="cashier">Cashier Name:</label>
+    <input type="text" id="cashier" class="form-control" @bind-value="cashierName" />
+</div>
+<br />
 <div class="row">
     <div class="col-4">
         <SelectProductForSelling OnProductSelected="SelectProduct"></SelectProductForSelling>
         <br />
-        <SellProductComponent SelectedProduct="selectProduct" OnProductSold="SellProduct"></SellProductComponent>
+        <SellProductComponent 
+                              CashierName="@cashierName"
+                              SelectedProduct="selectProduct" 
+                              OnProductSold="SellProduct"></SellProductComponent>
     </div>
     <div class="col">
     </div>
@@ -14,6 +22,12 @@
 
 @code{
     private Product selectProduct;
+    private string cashierName;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
 
     private void SelectProduct(Product product)
     {

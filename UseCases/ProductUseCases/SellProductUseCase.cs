@@ -10,12 +10,15 @@ namespace UseCases
     public class SellProductUseCase : ISellProductUseCase
     {
         private readonly IProductRepository productRepository;
+        private readonly IRecordTransactionUseCase recordTransaction;
 
-        public SellProductUseCase(IProductRepository productRepository)
+        public SellProductUseCase(IProductRepository productRepository,
+            IRecordTransactionUseCase recordTransaction)
         {
             this.productRepository = productRepository;
+            this.recordTransaction = recordTransaction;
         }
-        public void Execute(int productId, int qtyToSell)
+        public void Execute(string cashierName,int productId, int qtyToSell)
         {
             var product = productRepository.GetProductById(productId);
             if (product == null)
@@ -24,6 +27,7 @@ namespace UseCases
             }
             product.Quantity -= qtyToSell;
             productRepository.UpdateProduct(product);
+            recordTransaction.Execute(cashierName, productId, qtyToSell);
         }
     }
 }

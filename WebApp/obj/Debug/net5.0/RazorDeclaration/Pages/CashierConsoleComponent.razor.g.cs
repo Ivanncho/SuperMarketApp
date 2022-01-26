@@ -112,9 +112,15 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 15 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CashierConsoleComponent.razor"
+#line 23 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CashierConsoleComponent.razor"
       
     private Product selectProduct;
+    private string cashierName;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
 
     private void SelectProduct(Product product)
     {

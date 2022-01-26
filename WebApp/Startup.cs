@@ -36,6 +36,7 @@ namespace WebApp
             //Dependency Injection for InMemory Data Store
             services.AddScoped<ICategoryRepository, CategoryInMemoryRepository>();
             services.AddScoped<IProductRepository, ProductInMemoryRepository>();
+            services.AddScoped<ITransactionRepository, TransactionInMemoryRepository>();
 
             //Dependency Injection for Use cases
             //Category 
@@ -54,6 +55,9 @@ namespace WebApp
             services.AddTransient<IViewProductsByCategoryIdUseCase, ViewProductsByCategoryIdUseCase>();
             //Products to sell
             services.AddTransient<ISellProductUseCase, SellProductUseCase>();
+            //List of sold items
+            services.AddTransient<IRecordTransactionUseCase, RecordTransactionUseCase>();
+            services.AddTransient<IGetTodayTransactionUseCase, GetTodayTransactionUseCase>();
             
         }
 

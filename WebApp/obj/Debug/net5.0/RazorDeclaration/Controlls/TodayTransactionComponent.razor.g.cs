@@ -103,87 +103,13 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
-    public partial class SellProductComponent : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class TodayTransactionComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 41 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SellProductComponent.razor"
-      
-    private Product productToSell;
-    private string errorMessage;
-
-    [Parameter]
-    public string CashierName { get; set; }
-
-    [Parameter]
-    public Product SelectedProduct { get; set; }
-
-    [Parameter]
-    public EventCallback<Product> OnProductSold { get; set; }
-
-    protected override void OnParametersSet()
-    {
-        base.OnParametersSet();
-        if (SelectedProduct != null)
-        {
-            productToSell = new Product
-            {
-                ProductId = SelectedProduct.ProductId,
-                Name = SelectedProduct.Name,
-                CategoryId = SelectedProduct.CategoryId,
-                Price = SelectedProduct.Price,
-                Quantity = 1
-            };
-        }
-        else
-        {
-            productToSell = null;
-        }
-    }
-
-    private void SellProduct()
-    {
-        if (string.IsNullOrWhiteSpace(CashierName))
-        {
-            errorMessage = "The Cashier's name is missing";
-            return;
-        }
-
-
-        var product = GetProductByIdUseCase.Execute(productToSell.ProductId);
-
-        if (productToSell.Quantity <= 0)
-        {
-            errorMessage = "The quantity has to be greater than zero.";
-        }
-        else if (product.Quantity >= productToSell.Quantity)
-        {
-            if (string.IsNullOrWhiteSpace(CashierName))
-            {
-                throw new ApplicationException("Cashier's name is missing, cannot sell product");
-            }
-
-            OnProductSold.InvokeAsync(productToSell);
-            errorMessage = string.Empty;
-            SellProductUseCase.Execute(CashierName, productToSell.ProductId, productToSell.Quantity.Value);
-        }
-        else
-        {
-            errorMessage = $"{product.Name} only has {product.Quantity} left. It is not enough.";
-        }
-
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISellProductUseCase SellProductUseCase { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGetProductByIdUseCase GetProductByIdUseCase { get; set; }
     }
 }
 #pragma warning restore 1591
