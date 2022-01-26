@@ -111,9 +111,11 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SelectProductForSelling.razor"
+#line 38 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SelectProductForSelling.razor"
       
     private IEnumerable<Product> productsInCategory;
+    private int selectedProductId;
+
     [Parameter]
     public EventCallback<Product> OnProductSelected { get; set; }
 
@@ -141,6 +143,7 @@ using WebApp.Controlls;
     }
     private void OnSelectProduct(Product product)
     {
+        selectedProductId = product.ProductId;
         OnProductSelected.InvokeAsync(product);
     }
 

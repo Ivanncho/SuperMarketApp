@@ -5,17 +5,19 @@
 <div class="row">
     <div class="col-4">
         <SelectProductForSelling OnProductSelected="SelectProduct"></SelectProductForSelling>
-        <SellProductComponent OnProductSold="SellProduct"></SellProductComponent>
+        <br />
+        <SellProductComponent SelectedProduct="selectProduct" OnProductSold="SellProduct"></SellProductComponent>
     </div>
     <div class="col">
     </div>
 </div>
 
 @code{
+    private Product selectProduct;
 
     private void SelectProduct(Product product)
     {
-            
+        selectProduct = product;
     }
     private void SellProduct(Product product)
     {

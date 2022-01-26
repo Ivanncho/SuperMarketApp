@@ -111,7 +111,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 31 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SellProductComponent.razor"
+#line 35 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SellProductComponent.razor"
       
     private Product productToSell;
     private string errorMessage;
@@ -125,7 +125,7 @@ using WebApp.Controlls;
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
-        if(SelectedProduct != null)
+        if (SelectedProduct != null)
         {
             productToSell = new Product
             {
@@ -142,7 +142,7 @@ using WebApp.Controlls;
     {
         var product = GetProductByIdUseCase.Execute(productToSell.ProductId);
 
-        if(product.Quantity >= productToSell.Quantity)
+        if (product.Quantity >= productToSell.Quantity)
         {
             OnProductSold.InvokeAsync(productToSell);
             errorMessage = string.Empty;
