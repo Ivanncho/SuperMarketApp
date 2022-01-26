@@ -130,6 +130,7 @@ using WebApp.Controlls;
         {
             selectedCategoryId = value;
             productsInCategory = ViewProductsByCategoryIdUseCase.Execute(value);
+            OnSelectProduct(null);
             StateHasChanged();
         }
     }
@@ -143,8 +144,12 @@ using WebApp.Controlls;
     }
     private void OnSelectProduct(Product product)
     {
-        selectedProductId = product.ProductId;
         OnProductSelected.InvokeAsync(product);
+        if(product != null)
+        {
+            selectedProductId = product.ProductId;
+
+        }
     }
 
 

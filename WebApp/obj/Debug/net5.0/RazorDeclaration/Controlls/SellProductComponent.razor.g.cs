@@ -136,6 +136,10 @@ using WebApp.Controlls;
                 Quantity = 1
             };
         }
+        else
+        {
+            productToSell = null;
+        }
     }
 
     private void SellProduct()
