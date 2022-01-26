@@ -111,7 +111,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SellProductComponent.razor"
+#line 41 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\SellProductComponent.razor"
       
     private Product productToSell;
     private string errorMessage;
@@ -133,7 +133,7 @@ using WebApp.Controlls;
                 Name = SelectedProduct.Name,
                 CategoryId = SelectedProduct.CategoryId,
                 Price = SelectedProduct.Price,
-                Quantity = 0
+                Quantity = 1
             };
         }
     }
@@ -142,10 +142,15 @@ using WebApp.Controlls;
     {
         var product = GetProductByIdUseCase.Execute(productToSell.ProductId);
 
-        if (product.Quantity >= productToSell.Quantity)
+        if (productToSell.Quantity <= 0)
+        {
+            errorMessage = "The quantity has to be greater than zero.";
+        }
+        else if (product.Quantity >= productToSell.Quantity)
         {
             OnProductSold.InvokeAsync(productToSell);
             errorMessage = string.Empty;
+            SellProductUseCase.Execute(productToSell.ProductId, productToSell.Quantity.Value);
         }
         else
         {
@@ -158,6 +163,7 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISellProductUseCase SellProductUseCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGetProductByIdUseCase GetProductByIdUseCase { get; set; }
     }
 }
