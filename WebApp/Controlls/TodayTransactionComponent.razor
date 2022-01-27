@@ -8,10 +8,11 @@
             <tr>
                 <th>Cashier's name</th>
                 <th>Product Name</th>
-                <th>Date</th>
+                <th>Date Of Service</th>
                 <th>Quantity Before</th>
                 <th>Quantity Sold</th>
                 <th>Quantity After</th>
+                <th>Total balance</th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +21,11 @@
                 <tr>
                     <td>@trans.CashierName</td>
                     <td>@trans.ProductName</td>
-                    <td>@trans.TimeStamp.ToString("MM/dd")</td>
+                    <td>@trans.TimeStamp.ToString("MM/dd hh:mm")</td>
                     <td>@trans.BeforeQuantity</td>
                     <td>@trans.SoldQuantity</td>
                     <td>@(trans.BeforeQuantity-trans.SoldQuantity)</td>
+                    <td>@(string.Format("{0:c}",trans.Price * trans.SoldQuantity))</td>
                 </tr>
              }
         </tbody>

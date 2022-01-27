@@ -111,7 +111,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\TodayTransactionComponent.razor"
+#line 36 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\TodayTransactionComponent.razor"
       
     private IEnumerable<Transaction> transactions;
 

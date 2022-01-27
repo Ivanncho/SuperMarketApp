@@ -153,7 +153,6 @@ using WebApp.Controlls;
             return;
         }
 
-
         var product = GetProductByIdUseCase.Execute(productToSell.ProductId);
 
         if (productToSell.Quantity <= 0)

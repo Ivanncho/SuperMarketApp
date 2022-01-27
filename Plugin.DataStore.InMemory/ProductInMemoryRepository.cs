@@ -22,7 +22,7 @@ namespace Plugin.DataStore.InMemory
                     CategoryId = 1,
                     Name = "Ice Tea",
                     Quantity = 100,
-                    Price = 3.99
+                    Price = 3.00
                 },
                 new Product
                 {
@@ -30,7 +30,7 @@ namespace Plugin.DataStore.InMemory
                     CategoryId = 1,
                     Name = "Beer",
                     Quantity = 150,
-                    Price = 7.99
+                    Price = 7.00
                 },
                 new Product
                 {
@@ -54,7 +54,7 @@ namespace Plugin.DataStore.InMemory
                     CategoryId = 3,
                     Name = "Face cream",
                     Quantity = 100,
-                    Price = 12.30
+                    Price = 12.50
                 },
                 new Product
                 {
@@ -70,7 +70,7 @@ namespace Plugin.DataStore.InMemory
                     CategoryId = 1,
                     Name = "Coca Cola Zero",
                     Quantity = 100,
-                    Price = 4.5
+                    Price = 4.50
                 },
                 new Product
                 {
@@ -78,7 +78,7 @@ namespace Plugin.DataStore.InMemory
                     CategoryId = 1,
                     Name = "Wine",
                     Quantity = 100,
-                    Price = 124.99
+                    Price = 120.00
                 }
             };
         }

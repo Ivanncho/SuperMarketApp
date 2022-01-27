@@ -25,9 +25,9 @@ namespace UseCases
             {
                 return;
             }
+            recordTransaction.Execute(cashierName, productId, qtyToSell);
             product.Quantity -= qtyToSell;
             productRepository.UpdateProduct(product);
-            recordTransaction.Execute(cashierName, productId, qtyToSell);
         }
     }
 }
