@@ -17,10 +17,13 @@
                               OnProductSold="SellProduct"></SellProductComponent>
     </div>
     <div class="col">
+        <TodayTransactionComponent @ref="transactionComponent"></TodayTransactionComponent>
     </div>
 </div>
 
 @code{
+    private TodayTransactionComponent transactionComponent;
+
     private Product selectProduct;
     private string cashierName;
 
@@ -35,6 +38,6 @@
     }
     private void SellProduct(Product product)
     {
-
+        transactionComponent.LoadTransactions(cashierName);
     }
 }

@@ -42,7 +42,7 @@ namespace Plugin.DataStore.InMemory
             }
         }
 
-        public void Save(string cashierName, int productId, double price, int beforeQty, int soldQty)
+        public void Save(string cashierName, int productId,string productName, double price, int beforeQty, int soldQty)
         {
             int transactionId = 0;
             if(transactions != null && transactions.Count > 0)
@@ -63,7 +63,8 @@ namespace Plugin.DataStore.InMemory
                 BeforeQuantity = beforeQty,
                 SoldQuantity = soldQty,
                 TransactionId = transactionId,
-                CashierName = cashierName
+                CashierName = cashierName,
+                ProductName = productName
             });
         }
     }

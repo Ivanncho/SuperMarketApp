@@ -77,3 +77,5 @@ C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Con
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Pages\CashierConsoleComponent.razor.g.cs
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\RazorDeclaration\Controlls\SellProductComponent.razor.g.cs
 C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Controlls\SellProductComponent.razor.g.cs
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\RazorDeclaration\Controlls\TodayTransactionComponent.razor.g.cs
+C:\Users\jasmi\source\repos\SupermarketManager\WebApp\obj\Debug\net5.0\Razor\Controlls\TodayTransactionComponent.razor.g.cs

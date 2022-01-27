@@ -112,8 +112,10 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CashierConsoleComponent.razor"
+#line 24 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CashierConsoleComponent.razor"
       
+    private TodayTransactionComponent transactionComponent;
+
     private Product selectProduct;
     private string cashierName;
 
@@ -128,7 +130,7 @@ using WebApp.Controlls;
     }
     private void SellProduct(Product product)
     {
-
+        transactionComponent.LoadTransactions(cashierName);
     }
 
 #line default

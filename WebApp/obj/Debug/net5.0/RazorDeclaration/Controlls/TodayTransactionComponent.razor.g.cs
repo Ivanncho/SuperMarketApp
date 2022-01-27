@@ -110,6 +110,22 @@ using WebApp.Controlls;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 34 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Controlls\TodayTransactionComponent.razor"
+      
+    private IEnumerable<Transaction> transactions;
+
+    public void LoadTransactions(string cashierName)
+    {
+        transactions = GetTodayTransactionUseCase.Execute(cashierName);
+        StateHasChanged();
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGetTodayTransactionUseCase GetTodayTransactionUseCase { get; set; }
     }
 }
 #pragma warning restore 1591
