@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApp.Shared
+namespace WebApp.Pages
 {
     #line hidden
     using System;
@@ -103,7 +103,8 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/transaction")]
+    public partial class TransactionReportComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -111,20 +112,22 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Shared\NavMenu.razor"
+#line 64 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\TransactionReportComponent.razor"
        
-    private bool collapseNavMenu = true;
+    private string cashierName;
+    private DateTime startDate = DateTime.Today;
+    private DateTime endDate= DateTime.Today;
+    private IEnumerable<Transaction> transactions;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    private void LoadTransactions()
     {
-        collapseNavMenu = !collapseNavMenu;
+        transactions = GetTransactionsUseCase.Execute(cashierName, startDate, endDate);
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGetTransactionsUseCase GetTransactionsUseCase { get; set; }
     }
 }
 #pragma warning restore 1591
