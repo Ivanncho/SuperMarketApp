@@ -46,15 +46,19 @@
                     <td>@trans.BeforeQuantity</td>
                     <td>@trans.SoldQuantity</td>
                     <td>@(trans.BeforeQuantity-trans.SoldQuantity)</td>
-                    <td>@(string.Format("{0:c}",trans.Price * trans.SoldQuantity))</td>
+                    <td style="text-align:right">@(string.Format("{0:c}",trans.Price * trans.SoldQuantity))</td>
                 </tr>
             }
         </tbody>
         <tfoot>
             <tr>
                 <td colspan="5">&nbsp;</td>
-                <td style="font-weight:bold">Total Balance</td>
-                <td style="font-weight:bold">@(string.Format("{0:c}",transactions.Sum(x => x.Price * x.SoldQuantity)))</td>
+                <td>
+                    <b>Total Balance:</b>
+                </td>
+                <td style="text-align:right">
+                    <b>@(string.Format("{0:c}",transactions.Sum(x => x.Price * x.SoldQuantity)))</b>
+                </td>
             </tr>
         </tfoot>
     </table>
@@ -63,11 +67,18 @@
 
 @code {
     private string cashierName;
-    private DateTime startDate = DateTime.Today;
-    private DateTime endDate= DateTime.Today;
+    private DateTime startDate;
+    private DateTime endDate;
     private IEnumerable<Transaction> transactions;
 
-    private void LoadTransactions()
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+        startDate = DateTime.Today;
+        endDate = DateTime.Today;
+        }
+
+        private void LoadTransactions()
     {
         transactions = GetTransactionsUseCase.Execute(cashierName, startDate, endDate);
     }

@@ -112,14 +112,21 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 64 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\TransactionReportComponent.razor"
+#line 68 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\TransactionReportComponent.razor"
        
     private string cashierName;
-    private DateTime startDate = DateTime.Today;
-    private DateTime endDate= DateTime.Today;
+    private DateTime startDate;
+    private DateTime endDate;
     private IEnumerable<Transaction> transactions;
 
-    private void LoadTransactions()
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+        startDate = DateTime.Today;
+        endDate = DateTime.Today;
+        }
+
+        private void LoadTransactions()
     {
         transactions = GetTransactionsUseCase.Execute(cashierName, startDate, endDate);
     }
