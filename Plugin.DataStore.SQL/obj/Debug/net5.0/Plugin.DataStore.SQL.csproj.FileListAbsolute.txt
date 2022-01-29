@@ -16,3 +16,5 @@ C:\Users\jasmi\source\repos\SupermarketManager\Plugin.DataStore.SQL\obj\Debug\ne
 C:\Users\jasmi\source\repos\SupermarketManager\Plugin.DataStore.SQL\obj\Debug\net5.0\ref\Plugin.DataStore.SQL.dll
 C:\Users\jasmi\source\repos\SupermarketManager\Plugin.DataStore.SQL\obj\Debug\net5.0\Plugin.DataStore.SQL.pdb
 C:\Users\jasmi\source\repos\SupermarketManager\Plugin.DataStore.SQL\obj\Debug\net5.0\Plugin.DataStore.SQL.genruntimeconfig.cache
+C:\Users\jasmi\source\repos\SupermarketManager\Plugin.DataStore.SQL\bin\Debug\net5.0\UseCases.dll
+C:\Users\jasmi\source\repos\SupermarketManager\Plugin.DataStore.SQL\bin\Debug\net5.0\UseCases.pdb
