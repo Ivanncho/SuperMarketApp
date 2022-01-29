@@ -103,6 +103,13 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\AddProductComponent.razor"
+           [Authorize(policy: "AdminOnly")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/addproduct")]
     public partial class AddProductComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +119,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 49 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\AddProductComponent.razor"
+#line 50 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\AddProductComponent.razor"
        
     private Product product;
     private IEnumerable<Category> categories;

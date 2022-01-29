@@ -103,6 +103,13 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\AddCategoryComponent.razor"
+           [Authorize(policy:"AdminOnly")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/addcategory")]
     public partial class AddCategoryComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +119,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 29 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\AddCategoryComponent.razor"
+#line 30 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\AddCategoryComponent.razor"
        
     private Category category;
     protected override void OnInitialized()

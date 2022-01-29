@@ -37,6 +37,13 @@ namespace WebApp
             //Configuring connection to database
             services.AddDbContext<MarketContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
 
+            services.AddAuthorization(o =>
+            {
+                o.AddPolicy("AdminOnly", p => p.RequireClaim("Position", "Admin"));
+                o.AddPolicy("CashierOnly", p => p.RequireClaim("Position", "Cashier"));
+            }
+            );
+
             //Dependency Injection for InMemory Data Store
             //services.AddScoped<ICategoryRepository, CategoryInMemoryRepository>();
             //services.AddScoped<IProductRepository, ProductInMemoryRepository>();
@@ -95,6 +102,7 @@ namespace WebApp
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });

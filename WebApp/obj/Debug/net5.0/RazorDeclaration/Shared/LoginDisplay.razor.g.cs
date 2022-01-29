@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApp.Pages
+namespace WebApp.Shared
 {
     #line hidden
     using System;
@@ -22,13 +22,6 @@ using System.Net.Http;
 #nullable restore
 #line 2 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\_Imports.razor"
-using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
@@ -104,65 +97,20 @@ using WebApp.Controlls;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CashierConsoleComponent.razor"
-           [Authorize(policy: "CashierOnly")]
+#line 1 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Shared\LoginDisplay.razor"
+using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/cashier_console")]
-    public partial class CashierConsoleComponent : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class LoginDisplay : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 34 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CashierConsoleComponent.razor"
-      
-    private TodayTransactionComponent transactionComponent;
-
-    private Product selectProduct;
-    private string cashierName;
-
-    [CascadingParameter]
-    private Task<AuthenticationState> _authState { get; set; }
-
-    private AuthenticationState authState;
-
-    protected override async Task OnInitializedAsync()
-    {
-        authState = await _authState;
-        cashierName = authState.User.Identity.Name;
-
-    }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-    }
-    protected override void OnAfterRender(bool firstRender)
-    {
-        base.OnAfterRender(firstRender);
-        if (firstRender)
-        {
-            transactionComponent.LoadTransactions(cashierName);
-        }
-    }
-
-    private void SelectProduct(Product product)
-    {
-        selectProduct = product;
-    }
-    private void SellProduct(Product product)
-    {
-        transactionComponent.LoadTransactions(cashierName);
-    }
-
-#line default
-#line hidden
-#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

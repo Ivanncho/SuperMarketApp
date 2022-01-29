@@ -1,4 +1,5 @@
 ﻿@page "/transaction"
+@attribute [Authorize(policy: "AdminOnly")]
 
 @inject IGetTransactionsUseCase GetTransactionsUseCase
 @inject IJSRuntime JSRuntime
@@ -70,7 +71,7 @@
             </tfoot>
         </table>
     </div>
-    
+
 }
 
 

@@ -103,6 +103,13 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
+           [Authorize(policy: "AdminOnly")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/products")]
     public partial class ProductsComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +119,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
+#line 48 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\ProductsComponent.razor"
        
     private IEnumerable<Product> products;
 

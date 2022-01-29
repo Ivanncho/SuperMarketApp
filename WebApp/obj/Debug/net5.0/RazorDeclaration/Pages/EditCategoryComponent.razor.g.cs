@@ -103,6 +103,13 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\EditCategoryComponent.razor"
+           [Authorize(policy: "AdminOnly")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/editcategory/{categoryId}")]
     public partial class EditCategoryComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +119,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 31 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\EditCategoryComponent.razor"
+#line 32 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\EditCategoryComponent.razor"
        
 
     [Parameter]
@@ -130,11 +137,11 @@ using WebApp.Controlls;
         if (int.TryParse(this.CategoryId, out int iCategoryId))
         {
             var cat = GetCategoryByIdUseCase.Execute(iCategoryId);
-            this.category = new Category() 
-            { 
-                CategoryId = cat.CategoryId, 
-                Name = cat.Name, 
-                Description = cat.Description 
+            this.category = new Category()
+            {
+                CategoryId = cat.CategoryId,
+                Name = cat.Name,
+                Description = cat.Description
             };
         }
 

@@ -103,6 +103,13 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\TransactionReportComponent.razor"
+           [Authorize(policy: "AdminOnly")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/transaction")]
     public partial class TransactionReportComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +119,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 77 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\TransactionReportComponent.razor"
+#line 78 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\TransactionReportComponent.razor"
        
     private string cashierName;
     private DateTime startDate;

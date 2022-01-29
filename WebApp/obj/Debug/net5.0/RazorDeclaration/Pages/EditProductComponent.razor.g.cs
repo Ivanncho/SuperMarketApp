@@ -103,6 +103,13 @@ using WebApp.Controlls;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\EditProductComponent.razor"
+           [Authorize(policy: "AdminOnly")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/editproduct/{productId}")]
     public partial class EditProductComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +119,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\EditProductComponent.razor"
+#line 51 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\EditProductComponent.razor"
        
     [Parameter]
     public string ProductId { get; set; }
@@ -129,7 +136,7 @@ using WebApp.Controlls;
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
-        if(int.TryParse(this.ProductId, out int iProductId))
+        if (int.TryParse(this.ProductId, out int iProductId))
         {
             var prod = GetProductByIdUseCase.Execute(iProductId);
             this.product = new Product()
