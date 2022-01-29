@@ -112,28 +112,33 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\TransactionReportComponent.razor"
+#line 77 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\TransactionReportComponent.razor"
        
     private string cashierName;
     private DateTime startDate;
     private DateTime endDate;
     private IEnumerable<Transaction> transactions;
 
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
         startDate = DateTime.Today;
         endDate = DateTime.Today;
-        }
+    }
 
-        private void LoadTransactions()
+    private void LoadTransactions()
     {
         transactions = GetTransactionsUseCase.Execute(cashierName, startDate, endDate);
+    }
+    private void PrintReport()
+    {
+        JSRuntime.InvokeVoidAsync("print");
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGetTransactionsUseCase GetTransactionsUseCase { get; set; }
     }
 }
