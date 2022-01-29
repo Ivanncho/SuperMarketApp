@@ -142,6 +142,9 @@
             "projectReferences": {
               "C:\\Users\\jasmi\\source\\repos\\SupermarketManager\\CoreBusiness\\CoreBusiness.csproj": {
                 "projectPath": "C:\\Users\\jasmi\\source\\repos\\SupermarketManager\\CoreBusiness\\CoreBusiness.csproj"
+              },
+              "C:\\Users\\jasmi\\source\\repos\\SupermarketManager\\UseCases\\UseCases.csproj": {
+                "projectPath": "C:\\Users\\jasmi\\source\\repos\\SupermarketManager\\UseCases\\UseCases.csproj"
               }
             }
           }
