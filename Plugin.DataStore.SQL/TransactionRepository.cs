@@ -1,4 +1,5 @@
 ﻿using CoreBusiness;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,13 +26,15 @@ namespace Plugin.DataStore.SQL
         {
             if (string.IsNullOrWhiteSpace(cashierName))
             {
-                return context.Transactions.Where(t => t.TimeStamp >= startDate.Date &&
-                                                  t.TimeStamp <= endDate.Date.AddDays(1).Date);
+                return context.Transactions.Where(t => 
+                    t.TimeStamp >= startDate.Date &&
+                    t.TimeStamp <= endDate.Date.AddDays(1).Date);
             }
             else
             {
-                return context.Transactions.Where(t => t.CashierName.ToLower() == cashierName.ToLower() &&
-                                                  t.TimeStamp >= startDate.Date && t.TimeStamp <= endDate.Date.AddDays(1).Date);
+                return context.Transactions.Where(t => 
+                    EF.Functions.Like(t.CashierName, $"%{cashierName}%") &&
+                    t.TimeStamp >= startDate.Date && t.TimeStamp <= endDate.Date.AddDays(1).Date);
             }
         }
 
@@ -43,8 +46,9 @@ namespace Plugin.DataStore.SQL
             }
             else
             {
-                return context.Transactions.Where(t => t.CashierName.ToLower() == cashierName.ToLower() &&
-                                                  t.TimeStamp.Date == date.Date);
+                return context.Transactions.Where(t =>
+                    EF.Functions.Like(t.CashierName, $"%{cashierName}%") &&
+                    t.TimeStamp.Date == date.Date);
             }
         }
 
