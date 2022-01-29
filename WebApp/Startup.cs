@@ -41,7 +41,7 @@ namespace WebApp
             //services.AddScoped<ICategoryRepository, CategoryInMemoryRepository>();
             //services.AddScoped<IProductRepository, ProductInMemoryRepository>();
             //services.AddScoped<ITransactionRepository, TransactionInMemoryRepository>();
-
+            
             //Dependency Injection for EF Core Data Store
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
@@ -89,6 +89,9 @@ namespace WebApp
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
