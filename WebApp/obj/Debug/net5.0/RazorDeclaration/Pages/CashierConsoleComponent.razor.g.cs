@@ -119,7 +119,7 @@ using WebApp.Controlls;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CashierConsoleComponent.razor"
+#line 35 "C:\Users\jasmi\source\repos\SupermarketManager\WebApp\Pages\CashierConsoleComponent.razor"
       
     private TodayTransactionComponent transactionComponent;
 
